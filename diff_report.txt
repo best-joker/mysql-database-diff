@@ -1,0 +1,56 @@
+[新增表] Prod 缺少表: attendance_record
+[新增表] Prod 缺少表: bed
+[新增表] Prod 缺少表: bed_equipment
+[新增表] Prod 缺少表: building
+[新增字段] 表 contract 缺少字段: manager_id
+[新增字段] 表 contract 缺少字段: warning_days
+[新增字段] 表 contract 缺少字段: warning_enabled
+[新增字段] 表 contract 缺少字段: last_warning_time
+[新增字段] 表 contract 缺少字段: warning_count
+[新增表] Prod 缺少表: contract_material_item
+[新增表] Prod 缺少表: contract_warning_log
+[新增表] Prod 缺少表: equipment_type
+[新增表] Prod 缺少表: facility_status_dict
+[新增表] Prod 缺少表: fixed_asset_info
+[新增表] Prod 缺少表: floor
+[新增表] Prod 缺少表: flow_assets_info
+[新增表] Prod 缺少表: interview
+[新增表] Prod 缺少表: item
+[新增表] Prod 缺少表: leave_record
+[新增字段] 表 management_system_material_item 缺少字段: system_name
+[新增字段] 表 management_system_material_item 缺少字段: system_code
+[新增字段] 表 management_system_material_item 缺少字段: material_item_name
+[新增表] Prod 缺少表: management_system_material_item_copy1
+[新增字段] 表 material_item 缺少字段: material_item_id
+[新增字段] 表 material_item 缺少字段: material_item_name
+[新增字段] 表 material_item 缺少字段: material_type
+[新增表] Prod 缺少表: material_material_item
+[新增表] Prod 缺少表: partner
+[新增表] Prod 缺少表: partner_type
+[字段变更] 表 person.user_status 类型不一致: Dev(varchar(10)) vs Prod(enum('启用','禁用','锁定'))
+[新增字段] 表 policy 缺少字段: is_public
+[新增字段] 表 policy 缺少字段: publish_department_id
+[新增字段] 表 policy 缺少字段: publish_department_name
+[新增字段] 表 policy 缺少字段: version_number
+[字段变更] 表 position.position_type 类型不一致: Dev(varchar(36)) vs Prod(enum('管理岗','技术岗','护理岗','医疗岗','行政岗','其他'))
+[字段变更] 表 position.position_level 类型不一致: Dev(varchar(36)) vs Prod(enum('决策层','管理层','执行层'))
+[新增字段] 表 position 缺少字段: created_time
+[新增字段] 表 position 缺少字段: updated_time
+[新增字段] 表 position 缺少字段: position_leader_id
+[新增字段] 表 position 缺少字段: position_responsibilities
+[新增字段] 表 position 缺少字段: position_requirements
+[新增字段] 表 position 缺少字段: created_by
+[新增字段] 表 position 缺少字段: updated_by
+[新增表] Prod 缺少表: position_change_record
+[新增表] Prod 缺少表: purchase_item
+[新增表] Prod 缺少表: purchase_order
+[新增表] Prod 缺少表: purchase_order_item
+[新增表] Prod 缺少表: purchase_type
+[新增表] Prod 缺少表: recruit
+[新增表] Prod 缺少表: resign
+[新增表] Prod 缺少表: room
+[新增表] Prod 缺少表: stock_in_record
+[新增表] Prod 缺少表: stock_out_record
+[新增表] Prod 缺少表: training_record
+[新增表] Prod 缺少表: training_record_file
+[新增表] Prod 缺少表: training_record_type
