@@ -1,16 +1,30 @@
-# 数据库差异比较脚本
+# 数据库差异比较脚本 ✨`(๑•̀ㅂ•́)و✧`
 
 ## 介绍
-这是一个用于比较我现在有一个脚本用于比较dev和prod环境中MySQL的表结构的差异，能够生成会比较prod和dev的数据库中表结构的差异，然后给出比较结果的文本和建表、改字段属性的sql，让prod向dev靠齐。
+这是一个用于比较 dev 和 prod 环境中 MySQL 表结构差异的脚本。  
+它能够自动分析两个环境中的表结构差异，并生成以下内容：
+
+- **差异比较文本**（prod 与 dev 的结构差异）
+- **建表 SQL**（让 prod 新建 dev 中存在但 prod 中不存在的表）
+- **字段属性修改 SQL**（让 prod 的字段属性向 dev 对齐）
+
+让你轻松保持两个环境的结构一致 `(｡•̀ᴗ-)✧`
 
 ## 使用方法
 
-使用前下载`PyMySQL`库，然后运行脚本
+使用前请先安装 `PyMySQL` 库：
 
-```python
+```bash
+pip install PyMySQL
+```
+
+然后运行脚本：
+```bash
 python db_diff.py
 ```
 
-会生成`diff_report.txt` `fix_changes.sql` `db_diff.py`
-
-分别包含差异比较的文本，新建与dev中表结构中一样的新table、以及原有prod字段中属性修改的sql语句。
+运行后会生成以下两个文件：
+- diff_report.txt — 表结构差异的详细文本报告
+- fix_changes.sql — 修改prod原有字段，靠近dev
+- create_missing_tables.sql 创建缺失表 
+让你一键掌握差异，一键修复结构`(≧▽≦)/`
