@@ -7,6 +7,10 @@
 [新增字段] 表 contract 缺少字段: warning_enabled
 [新增字段] 表 contract 缺少字段: last_warning_time
 [新增字段] 表 contract 缺少字段: warning_count
+[新增索引] 表 contract 缺少索引: idx_contract_manager_id (`manager_id`)
+[新增索引] 表 contract 缺少索引: idx_contract_expiry_date (`expiry_date`)
+[新增索引] 表 contract 缺少索引: idx_contract_warning_enabled (`warning_enabled`)
+[新增索引] 表 contract 缺少索引: idx_contract_status (`status`)
 [新增表] Prod 缺少表: contract_material_item
 [新增表] Prod 缺少表: contract_warning_log
 [新增表] Prod 缺少表: equipment_type
@@ -20,20 +24,40 @@
 [新增字段] 表 management_system_material_item 缺少字段: system_name
 [新增字段] 表 management_system_material_item 缺少字段: system_code
 [新增字段] 表 management_system_material_item 缺少字段: material_item_name
+[新增索引] 表 management_system_material_item 缺少索引: idx_system_code (`system_code`)
+[新增索引] 表 management_system_material_item 缺少索引: idx_material_item_name (`material_item_name`)
 [新增表] Prod 缺少表: management_system_material_item_copy1
+[删除字段] 表 material_item Dev 已删除字段: material_id
+[删除字段] 表 material_item Dev 已删除字段: material_name
 [新增字段] 表 material_item 缺少字段: material_item_id
 [新增字段] 表 material_item 缺少字段: material_item_name
 [新增字段] 表 material_item 缺少字段: material_type
+[新增索引] 表 material_item 缺少索引: idx_material_item_type (`material_type`)
 [新增表] Prod 缺少表: material_material_item
 [新增表] Prod 缺少表: partner
 [新增表] Prod 缺少表: partner_type
-[字段变更] 表 person.user_status 类型不一致: Dev(varchar(10)) vs Prod(enum('启用','禁用','锁定'))
+[字段类型变更] 表 person.user_status: enum('启用','禁用','锁定') -> varchar(10)
+[删除字段] 表 policy Dev 已删除字段: department_id
+[删除字段] 表 policy Dev 已删除字段: department_name
+[删除字段] 表 policy Dev 已删除字段: personnel_scope
+[删除字段] 表 policy Dev 已删除字段: related_personnel
+[删除字段] 表 policy Dev 已删除字段: material_item_count
+[删除字段] 表 policy Dev 已删除字段: material_item_names
 [新增字段] 表 policy 缺少字段: is_public
 [新增字段] 表 policy 缺少字段: publish_department_id
 [新增字段] 表 policy 缺少字段: publish_department_name
 [新增字段] 表 policy 缺少字段: version_number
-[字段变更] 表 position.position_type 类型不一致: Dev(varchar(36)) vs Prod(enum('管理岗','技术岗','护理岗','医疗岗','行政岗','其他'))
-[字段变更] 表 position.position_level 类型不一致: Dev(varchar(36)) vs Prod(enum('决策层','管理层','执行层'))
+[新增索引] 表 policy 缺少索引: idx_publish_department_id (`publish_department_id`)
+[删除索引] 表 policy Dev 已删除索引: idx_department_id (`department_id`)
+[删除索引] 表 policy Dev 已删除索引: idx_material_item_count (`material_item_count`)
+[删除字段] 表 position Dev 已删除字段: create_time
+[删除字段] 表 position Dev 已删除字段: update_time
+[字段类型变更] 表 position.position_type: enum('管理岗','技术岗','护理岗','医疗岗','行政岗','其他') -> varchar(36)
+[字段NULL变更] 表 position.position_type: NO -> YES
+[字段类型变更] 表 position.position_level: enum('决策层','管理层','执行层') -> varchar(36)
+[字段NULL变更] 表 position.position_level: NO -> YES
+[字段NULL变更] 表 position.authorized_strength: NO -> YES
+[字段NULL变更] 表 position.sort_order: NO -> YES
 [新增字段] 表 position 缺少字段: created_time
 [新增字段] 表 position 缺少字段: updated_time
 [新增字段] 表 position 缺少字段: position_leader_id

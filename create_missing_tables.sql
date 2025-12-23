@@ -512,7 +512,7 @@ CREATE TABLE `training_record` (
   `start_time` datetime NOT NULL COMMENT '培训开始时间',
   `end_time` datetime NOT NULL COMMENT '培训结束时间',
   `location` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '培训地点',
-  `speaker_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主讲人Id',
+  `speaker_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主讲人Id',
   `created_time` datetime DEFAULT NULL COMMENT '创建时间',
   `updated_time` datetime DEFAULT NULL COMMENT '更新时间',
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '内容',
@@ -525,7 +525,7 @@ CREATE TABLE `training_record` (
   `rating_indicator` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '关联评级指标',
   `note` text COLLATE utf8mb4_general_ci COMMENT '备注（其他信息）',
   PRIMARY KEY (`training_record_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- 来自 Dev 的表 `training_record_file`
@@ -537,7 +537,7 @@ CREATE TABLE `training_record_file` (
   `created_time` datetime NOT NULL COMMENT '上传日期',
   `file_type` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT '文件类型',
   PRIMARY KEY (`file_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- 来自 Dev 的表 `training_record_type`
