@@ -3,13 +3,17 @@ import sys
 
 def get_db_structure(conn):
     cursor = conn.cursor(pymysql.cursors.DictCursor)
-    cursor.execute("SHOW TABLES")
+    cursor.execute("SHOW FULL TABLES WHERE Table_type = 'BASE TABLE'")
     tables = [list(row.values())[0] for row in cursor.fetchall()]
 
     structure = {}
     for table in tables:
-        cursor.execute(f"DESCRIBE `{table}`")
-        structure[table] = {row['Field']: row for row in cursor.fetchall()}
+        try:
+            cursor.execute(f"DESCRIBE `{table}`")
+            structure[table] = {row['Field']: row for row in cursor.fetchall()}
+        except Exception as e:
+            print(f"警告: 跳过表 {table}: {e}")
+            continue
 
     cursor.close()
     return structure
